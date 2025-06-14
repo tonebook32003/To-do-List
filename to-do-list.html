@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Huninn&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
+    <title>To-do List App - By Bookkisme</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-app">
+        <h2>
+          <i class="fas fa-tasks"></i> To-do List App
+        </h2>
+        <div class="row">
+          <input
+            type="text"
+            id="input-box"
+            placeholder="Enter your task here"
+          />
+          <button onclick="addTask()" id="add-btn">
+            <i class="fas fa-plus"></i> Add
+          </button>
+        </div>
+        <div class="task-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <ul id="list-container">
+        </ul>
+        <div class="task-stats">
+          <span id="task-count">0 tasks left</span>
+          <button id="clear-completed">Clear Completed</button>
+        </div>
+      </div>
+    </div>
+    <div id="notification" class="notification">
+      <div class="notification-content">
+        <i class="fas fa-info-circle"></i>
+        <span id="notification-message"></span>
+      </div>
+    </div>
+  </body>
+</html>
