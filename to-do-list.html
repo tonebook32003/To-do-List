@@ -17,37 +17,82 @@
   <body>
     <div class="container">
       <div class="todo-app">
-        <h2>
-          <i class="fas fa-tasks"></i> To-do List App
-        </h2>
-        <div class="row">
-          <input
-            type="text"
-            id="input-box"
-            placeholder="Enter your task here"
-          />
-          <button onclick="addTask()" id="add-btn">
-            <i class="fas fa-plus"></i> Add
-          </button>
+        <div class="app-header">
+          <h2>
+            <i class="fas fa-tasks"></i> To-do List App
+          </h2>
+          <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </div>
         </div>
+
+        <div class="input-section">
+          <div class="row">
+            <input
+              type="text"
+              id="input-box"
+              placeholder="Enter your task here"
+            />
+            <button onclick="addTask()" id="add-btn">
+              <i class="fas fa-plus"></i> Add
+            </button>
+          </div>
+          <div class="date-row">
+            <label for="task-time">
+              <i class="far fa-calendar-alt"></i> Due Date
+            </label>
+            <input
+              type="datetime-local"
+              id="task-time"
+              class="time-input"
+            />
+          </div>
+        </div>
+
         <div class="task-filters">
           <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="active">Active</button>
           <button class="filter-btn" data-filter="completed">Completed</button>
+          <button class="filter-btn" data-filter="priority">Priority</button>
         </div>
+
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="search-input" placeholder="Search tasks...">
+        </div>
+
         <ul id="list-container">
         </ul>
+
         <div class="task-stats">
-          <span id="task-count">0 tasks left</span>
-          <button id="clear-completed">Clear Completed</button>
+          <div class="stats-left">
+            <span id="task-count">0 tasks left</span>
+            <div class="progress-bar">
+              <div class="progress" id="progress-bar"></div>
+            </div>
+          </div>
+          <div class="stats-right">
+            <button id="clear-completed">Clear Completed</button>
+            <button id="sort-btn">
+              <i class="fas fa-sort"></i> Sort
+            </button>
+          </div>
         </div>
       </div>
     </div>
+
     <div id="notification" class="notification">
       <div class="notification-content">
         <i class="fas fa-info-circle"></i>
         <span id="notification-message"></span>
       </div>
+    </div>
+
+    <div class="sort-options" id="sort-options">
+      <button data-sort="date-asc">Date (Oldest First)</button>
+      <button data-sort="date-desc">Date (Newest First)</button>
+      <button data-sort="priority">Priority</button>
+      <button data-sort="alphabetical">Alphabetical</button>
     </div>
   </body>
 </html>
